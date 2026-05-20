@@ -1,0 +1,12 @@
+from sqlmodel import create_engine, Session, SQLModel
+
+DATABASE_URI = "mysql+pymysql://root:@localhost:3306/ecommerce"
+
+engine = create_engine(DATABASE_URI)
+
+def create_db():
+    SQLModel.metadata.create_all(engine)
+
+def get_session():
+    with Session(engine) as session:
+        yield session
