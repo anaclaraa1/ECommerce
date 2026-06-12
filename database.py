@@ -1,6 +1,6 @@
 from sqlmodel import create_engine, Session, SQLModel
 
-DATABASE_URI = "mysql+pymysql://root:@localhost:3306/ecommerce"
+DATABASE_URI = "mysql+pymysql://root:admin@localhost:3306/ecommerce"
 
 engine = create_engine(DATABASE_URI)
 

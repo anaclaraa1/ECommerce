@@ -11,6 +11,8 @@ from routers import pagamentos
 from routers import enderecos
 from routers import avaliacoes
 from routers import estoque
+from routers import login
+
 
 app = FastAPI()
 
@@ -25,11 +27,4 @@ app.include_router(pagamentos.router, prefix="/pagamentos", tags=["Pagamentos"])
 app.include_router(enderecos.router, prefix="/enderecos", tags=["Endereços"])
 app.include_router(avaliacoes.router, prefix="/avaliacoes", tags=["Avaliações"])
 app.include_router(estoque.router, prefix="/estoque", tags=["Estoque"])
-
-# from fastapi import FastAPI
-
-# app = FastAPI()
-
-# @app.get("/")
-# def home():
-#     return {"msg": "ok"}
+app.include_router(login.router)

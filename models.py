@@ -318,4 +318,3 @@ class Estoque(SQLModel, table=True):
     produto: "Produto" = Relationship(
         back_populates="estoque"
     )
-
